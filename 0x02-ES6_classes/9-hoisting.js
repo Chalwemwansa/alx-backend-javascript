@@ -8,8 +8,16 @@ export class HolbertonClass {
     return this._year;
   }
 
+  set year(year) {
+    this._year = year;
+  }
+
   get location() {
     return this._location;
+  }
+
+  set location(location) {
+    this._location = location;
   }
 }
 
@@ -27,8 +35,20 @@ export class StudentHolberton {
     return `${this._firstName} ${this._lastName}`;
   }
 
+  set firstName(firstName) {
+    this._firstName = firstName;
+  }
+
+  set lastName(lastName) {
+    this._lastName = lastName;
+  }
+
   get holbertonClass() {
     return this.holbertonClass;
+  }
+
+  set holbertonClass(holbertonClass) {
+    this._holbertonClass = holbertonClass;
   }
 
   get fullStudentDescription() {
