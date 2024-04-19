@@ -4,9 +4,9 @@ export default function createInt8TypedArray(length, position, value) {
     dataView.setInt8(position, value);
   } catch (error) {
     if (error instanceof RangeError) {
-        throw new Error('Position outside range');
+      throw new Error('Position outside range');
     } else {
-        throw error;
+      throw error;
     }
   }
   return dataView;

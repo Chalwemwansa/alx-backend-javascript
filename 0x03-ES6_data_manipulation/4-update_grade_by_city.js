@@ -1,14 +1,16 @@
 export default function updateStudentGradeByCity(studentArray, city, studentGrade) {
   const newArray = studentArray.map((student) => {
+    const copyStudent = { ...student };
     if (student.location === city) {
-      let grade = studentGrade.filter((studentGrade) => studentGrade.studentId === student.id);
+      const grade = studentGrade.filter((studentGrade) => studentGrade.studentId === student.id);
       if (grade.length !== 0) {
-        student['grade'] = grade[0].grade;
+        copyStudent.grade = grade[0].grade;
       } else {
-        student['grade'] = 'N/A';
+        copyStudent.grade = 'N/A';
       }
-      return student;
-    }    
+      return copyStudent;
+    }
+    return undefined;
   });
   return newArray.filter((element) => element !== undefined);
 }

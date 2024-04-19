@@ -1,10 +1,14 @@
 export default function cleanSet(set, startString) {
+  if (startString === undefined || typeof startString !== 'string') {
+    return '';
+  }
   const strLength = startString.length;
   const array = Array.from(set).map((element) => {
-    if (element.startsWith(startString) && startString !== '') {
+    if (element !== undefined && element.startsWith(startString) && startString !== '') {
       return element.slice(strLength);
     }
+    return undefined;
   }).filter((element) => element !== undefined);
-  let str = array.join('-');
+  const str = array.join('-');
   return str;
 }
