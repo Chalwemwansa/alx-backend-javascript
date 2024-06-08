@@ -2,14 +2,9 @@
 // module in the current directory
 
 const calculateNumber = require('./1-calcul');
+const { expect } = require('chai');
 
 describe('Math functions', function () {
-  let expect;
-  before(async function () {
-    const chai = await import('chai');
-    expect = chai.expect;
-  });
-
   describe('#calculateNumber', function () {
     it('returns 6 for SUM 1.4 and 4.5', function () {
       expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);

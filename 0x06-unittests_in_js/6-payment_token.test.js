@@ -1,14 +1,9 @@
 // module contains tests for the getPaymentTokenFromAPI function
 const getPaymentTokenFromAPI = require('./6-payment_token');
+const { expect } = require('chai');
 
 
 describe('getPaymentTokenFromAPI', function () {
-	let expect;
-  before(async function () {
-    const chai = await import('chai');
-    expect = chai.expect;
-  });
-
   it("returns {data: 'Successful response from the API' } when true is passed in", function (done) {
     getPaymentTokenFromAPI(true)
       .then(response => {
